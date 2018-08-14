@@ -20,7 +20,7 @@ export default class Index extends React.Component {
             let socket = io(this.socket);
 
             socket.on('connect', () => this.setState({ loading: true }));
-            socket.on('lineoverall', (data) => this.setState({ data: JSON.parse(data), loading: false }));
+            socket.on('lineoverall', (data) => this.setState({ data, loading: false }));
             socket.on('disconnect', () => this.setState({ loading: true }));
         }
     }
