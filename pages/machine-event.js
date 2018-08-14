@@ -34,8 +34,7 @@ export default class Index extends React.Component {
 
         return (
             <div>
-                { loading && <Loading/> }
-                { !loading && data && <div className="mt-5">
+                <div className="mt-5">
                     <Container>
                         <div className="d-flex justify-content-between">
                             <div>
@@ -72,7 +71,7 @@ export default class Index extends React.Component {
                             </div>
                         </div>
                     </Container>
-                </div> }
+                </div>
             </div>
         );
     }

@@ -34,8 +34,7 @@ export default class Index extends React.Component {
 
         return (
             <div>
-                { loading && <Loading/> }
-                { !loading && data && <div className="mt-5">
+                <div className="mt-5">
                     <Container>
                         <div className="d-flex justify-content-between">
                             <div>
@@ -65,10 +64,13 @@ export default class Index extends React.Component {
                                 </Menu>
                             </div>
                             <div className="border flex-fill ml-2 bg-dark text-white">
-                                <div className="p-2 bg-secondary small text-center">Console</div>
-                                <div className="p-2 small">
-                                    {JSON.stringify(data, null, '\t')}
-                                </div>
+                                { loading && <Loading/> }
+                                { !loading && data && <div>
+                                    <div className="p-2 bg-secondary small text-center">Console</div>
+                                    <div className="p-2 small">                                
+                                        {JSON.stringify(data, null, '\t')}
+                                    </div>
+                                </div> }
                             </div>
                         </div>
                     </Container>
